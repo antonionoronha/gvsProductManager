@@ -20,37 +20,28 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h2><i class="fa fa-product-hunt" aria-hidden="true"></i><strong>Lista de produtos</strong></h2>
-                <!--div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div-->
+           
               </div>
               <div class="panel-body">
-                <table class="table bootstrap-datatable countries">
+                <table class="table table-bordered table-hover table-striped table-condesed" id="products">
                   <thead>
                     <tr>
+                      <th>#</th>
                       <th>Produto</th>
                       <th>Quantidade</th>
                       <th>Criado por</th>
-                      <th>Ação</th>
+                      <th>Criado em</th>
                     </tr>
                   </thead>
                   <tbody>
                     @foreach($product as $products)
                    
                     <tr>
+                      <td>{{$products->id}}</td>
                       <td>{{$products->name}}</td>
                       <td>{{$products->balance}}</td>
                       <td>{{$products->created_by}}</td>
-                      <td>
-                      <a href="{{url("/product/$products->id/edit")}}">
-                            <button class="btn btn-primary">Editar</button>
-                        </a>
-
-                        <a href="{{url("/product/$products->id")}}" class="js-del">
-                            <button class="btn btn-danger">Deletar</button>
-                        </a>
+                      <td>{{$products->created_at}}                
                       </td>
                     </tr>
                     @endforeach
@@ -58,10 +49,27 @@
                     
                   </tbody>
                 </table>
+                
+
+                <script type="text/javascript">
+            
+                  $(document).ready(function() {
+                    $('#products').DataTable( {
+                      dom: 'Bfrtip',
+                      buttons: [
+                        'copyHtml5',
+                        'excelHtml5',
+                        'csvHtml5',
+                        'pdfHtml5'
+                      ]
+                    } );
+                  } );
+                </script>
               </div>
 
             </div>
 
           </div>
+          
 
 @endsection

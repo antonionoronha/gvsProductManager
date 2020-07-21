@@ -13,7 +13,6 @@
 
   <!-- Bootstrap CSS -->
   {!!Html::style ('css/bootstrap.min.css') !!}
-
   <!-- bootstrap theme -->
   {!!Html::style ('css/bootstrap-theme.css') !!}
   <!--external css-->
@@ -35,6 +34,10 @@
   {!!Html::style ('css/style-responsive.css') !!}
   {!!Html::style ('css/xcharts.min.css') !!}
   {!!Html::style ('css/jquery-ui-1.10.4.min.css') !!}
+  <!-- Data Tables -->
+  {!!Html::style ('css/buttons.dataTables.min.css')!!}
+  {!!Html::style ('css/jquerydataTables.min.css')!!}
+
 </head>
 
 <body>
@@ -55,6 +58,7 @@
     <section id="main-content">
         <!--overview start-->
       <div class="wrapper">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
         @yield('content')
       </div>        
 
@@ -70,9 +74,7 @@
 
   <!-- javascripts -->
   {!!Html::script ('js/jquery.js') !!}
-  <!--script src="js/jquery.js"></script-->
   {!!Html::script('assets/js/javascript.js')!!}
-  <script src="{{url("assets/js/javascript.js")}}"></script>
   {!!Html::script ('js/jquery-ui-1.10.4.min.js') !!}
   {!!Html::script ('js/jquery-1.8.3.min.js') !!}
   {!!Html::script ('js/jquery-ui-1.9.2.custom.min.js') !!}
@@ -88,31 +90,39 @@
   {!!Html::script ('js/owl.carousel.js') !!}
   <!-- jQuery full calendar -->
   {!!Html::script ('js/fullcalendar.min.js') !!}
-    <!-- Full Google Calendar - Calendar -->
-    {!!Html::script ('assets/fullcalendar/fullcalendar/fullcalendar.js') !!}
-    <!--script for this page only-->
-    {!!Html::script ('js/calendar-custom.js') !!}
-    {!!Html::script ('js/jquery.rateit.min.js') !!}
-    <!-- custom select -->
-    {!!Html::script ('js/jquery.customSelect.min.js') !!}
-    {!!Html::script ('assets/chart-master/Chart.js') !!}
+  <!-- Full Google Calendar - Calendar -->
+  {!!Html::script ('assets/fullcalendar/fullcalendar/fullcalendar.js') !!}
+  <!--script for this page only-->
+  {!!Html::script ('js/calendar-custom.js') !!}
+  {!!Html::script ('js/jquery.rateit.min.js') !!}
+  <!-- custom select -->
+  {!!Html::script ('js/jquery.customSelect.min.js') !!}
+  {!!Html::script ('assets/chart-master/Chart.js') !!}
+  <!--custome script for all page-->
+  {!!Html::script ('js/scripts.js') !!}
+  <!-- custom script for this page-->
+  {!!Html::script ('js/sparkline-chart.js') !!}
+  {!!Html::script ('js/easy-pie-chart.js') !!}
+  {!!Html::script ('js/jquery-jvectormap-1.2.2.min.js') !!}
+  {!!Html::script ('js/jquery-jvectormap-world-mill-en.js') !!}
+  {!!Html::script ('js/xcharts.min.js') !!}
+  {!!Html::script ('js/jquery.autosize.min.js') !!}
+  {!!Html::script ('js/jquery.placeholder.min.js') !!}
+  {!!Html::script ('js/gdp-data.js') !!}
+  {!!Html::script ('js/morris.min.js') !!}
+  {!!Html::script ('js/sparklines.js') !!}
+  {!!Html::script ('js/charts.js') !!}
+  {!!Html::script ('js/jquery.slimscroll.min.js') !!}
 
-    <!--custome script for all page-->
-    {!!Html::script ('js/scripts.js') !!}
-    <!-- custom script for this page-->
-    {!!Html::script ('js/sparkline-chart.js') !!}
-    {!!Html::script ('js/easy-pie-chart.js') !!}
-    {!!Html::script ('js/jquery-jvectormap-1.2.2.min.js') !!}
-    {!!Html::script ('js/jquery-jvectormap-world-mill-en.js') !!}
-    {!!Html::script ('js/xcharts.min.js') !!}
-    {!!Html::script ('js/jquery.autosize.min.js') !!}
-    {!!Html::script ('js/jquery.placeholder.min.js') !!}
-    {!!Html::script ('js/gdp-data.js') !!}
-    {!!Html::script ('js/morris.min.js') !!}
-    {!!Html::script ('js/sparklines.js') !!}
-    {!!Html::script ('js/charts.js') !!}
-    {!!Html::script ('js/jquery.slimscroll.min.js') !!}
-    <script>
+  <!-- Js DataTables -->
+  {{!!Html::script ('js/jquery.dataTables.min.js')!!}}
+  {{!!Html::script ('js/dataTables.buttons.min.js')!!}}
+  {{!!Html::script ('js/jszip.min.js')!!}}
+  {{!!Html::script ('js/pdfmake.min.js')!!}}
+  {{!!Html::script ('js/vsf_fonts.min.js')!!}}
+  {{!!Html::script ('js/buttons.html5.min.js')!!}}
+
+  <script>
       //knob
       $(function() {
         $(".knob").knob({

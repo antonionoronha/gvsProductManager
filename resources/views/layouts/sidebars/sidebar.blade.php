@@ -16,7 +16,7 @@
                       </a>
             <ul class="sub">
               <li><a class="" href="{{ route('createProduct') }}">Cadastrar</a></li>
-              <!--li><a class="" href="form_validation.html">Form Validation</a></li-->
+              <li><a class="" href="{{ url('/product') }}">Editar</a></li-->
             </ul>
           </li>
           <li class="sub-menu">

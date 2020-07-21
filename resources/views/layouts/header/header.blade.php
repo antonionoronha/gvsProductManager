@@ -19,7 +19,7 @@
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                {!!Html::image('img/avatar1_small.jpg') !!}
+                                {!!Html::image('img/chat-avatar2.jpg') !!}
                             </span>
                             <span class="username"> {{ Auth::user()->name }} </span>
                             <b class="caret"></b>

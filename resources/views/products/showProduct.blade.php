@@ -19,42 +19,32 @@
           <div class="col-lg-12 col-md-12">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h2><i class="fa fa-product-hunt" aria-hidden="true"></i><strong>Lista de usuários</strong></h2>
-                <!--div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div-->
+                <h2><i class="fa fa-product-hunt" aria-hidden="true"></i><strong>Lista de produtos</strong></h2>
+
               </div>
               <div class="panel-body">
-                <table class="table table-bordered table-hover table-striped table-condesed">
+                <table class="table table-bordered table-hover table-striped table-condesed" id="products">
                   <thead>
                     <tr>
-                      <th>Nome</th>
-                      <th>E-mail</th>
-                      <th>Departamento</th>
-                      <th>Tipo</th>
+                      <th>Produto</th>
+                      <th>Quantidade</th>
+                      <th>Criado por</th>
                       <th>Ação</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($user as $users)
+                    @foreach($product as $products)
                    
                     <tr>
-                      <td>{{$users->name}}</td>
-                      <td>{{$users->email}}</td>
-                      <td>{{$users->department}}</td>
-                      @if($users->role_id==1)
-                      <td>Admin</td>
-                      @else
-                      <td>Regular</td>
-                      @endif
+                      <td>{{$products->name}}</td>
+                      <td>{{$products->balance}}</td>
+                      <td>{{$products->created_by}}</td>
                       <td>
-                      <a href="{{url("/users/$users->id/edit")}}">
+                      <a href="{{url("/product/$products->id/edit")}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
 
-                        <a href="{{url("/users/$users->id")}}" class="js-del">
+                        <a href="{{url("/product/$products->id")}}" class="js-del">
                             <button class="btn btn-danger">Deletar</button>
                         </a>
                       </td>
@@ -64,10 +54,12 @@
                     
                   </tbody>
                 </table>
+
               </div>
 
             </div>
 
           </div>
+          
 
 @endsection

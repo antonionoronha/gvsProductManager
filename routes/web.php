@@ -25,9 +25,6 @@ Route::group(['middleware' => ['authen','roles'],'roles' => ['admin']], function
     //for admin
 
     Route::resource('/users','UserController');
-    Route::get('/createUser',function(){
-    });
-    Route::get('/listUser',function(){
-    });
+    
 });
 

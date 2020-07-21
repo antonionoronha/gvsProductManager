@@ -17,6 +17,13 @@ class ProductController extends Controller
         $this->middleware('web');
     }
 
+    public function index()
+    {
+        $product=$this->objProduct->all()->sortBy('created_at');
+
+        return view('products.showProduct', compact('product'));
+    }
+
     public function createProduct()
     {
         return view('products.createProduct');

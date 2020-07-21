@@ -21,6 +21,13 @@
     </div>
 </div>
 
+        @if(isset($error_email))
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>Este e-mail já está cadastrado!!!</strong>
+        </div>
+        @endif
+
 <div class="row">
     <div class="col-lg-12">
         <section class="panel panel-default">
@@ -60,7 +67,8 @@
                             <datalist id="setores">
                             <option value="TI">
                             <option value="Comercial">
-                            <option value="Administrativo">
+                            <option value="Financeiro">
+                            <option value="Contabilidade">
                             </datalist>
                             <div class="input-group">
                             <input list="setores" type="text" class="form-control" name="department" id="department"  required>
@@ -77,18 +85,7 @@
                             <datalist id="roles">
                             <option value="Admin">
                             <option value="Regular">
-                            </datalist>
-                            <!--input list="roles" type="text"class="form-control" name="role" id="role" 
-                            @if(isset($user))
-                            @if($user->role_id==1)
-                            value="Admin"
-                            @elseif ($user->role_id==2)
-                            value="Regular"
-                            @else                            
-                            value="" 
-                            @endif
-                            @endif  
-                            required--> 
+                            </datalist>                           
                             <input list="roles" type="text"class="form-control" name="role" id="role" required-->                             
                             </input>
                             </div>

@@ -57,22 +57,36 @@ class UserController extends Controller
             $role=2;
         }
 
-        $remember=str_random(10);
-        //error_log($remember);
+        $user = User::where('email', '=', $request->email)->first();
+        
+        if($user == null)
 
-        $cad=$this->objUser->create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'department'=>$request->department,
-            'password'=>bcrypt($request->password),
-            'remember_token'=> $remember,
-            'role_id'=>$role,            
-        ]);
-
-        if($cad)
         {
-            return redirect('dashboard');
+
+            $remember=str_random(10);
+
+            $cad=$this->objUser->create([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'department'=>$request->department,
+                'password'=>bcrypt($request->password),
+                'remember_token'=> $remember,
+                'role_id'=>$role,            
+            ]);
+
+            if($cad)
+            {
+                $user=$this->objUser->all();
+                return view('layouts.users.index',compact('user'));
+            }
+
         }
+        else
+        {
+            $error_email="Esse e-mail já está cadastrado!!";
+            return view('layouts.users.createUser',compact('error_email'));
+        }
+
     }
 
     /**
